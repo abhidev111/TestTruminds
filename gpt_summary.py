@@ -1,9 +1,9 @@
 import os
 import openai
-openai.organization = "org-0t4UHmadsZ86PjLqG9Q3uwaT"
-openai.api_key = "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"
-# tru apikey - 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
-# prsnl api key -  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
+from decouple import config
+
+openai.organization = config("ORG_KEY")
+openai.api_key =config("API_KEY")
 
 
 def summarize_using_gpt_3_0(paragraph):
